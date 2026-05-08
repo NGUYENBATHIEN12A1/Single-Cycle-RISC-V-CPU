@@ -74,17 +74,6 @@ Responsible for extracting and formatting immediate values from the 32-bit instr
 
 ---
 
-## 🛠️ Technologies & Tools
-
-This core was developed and verified using industry-standard tools and methodologies:
-
-* **Hardware Description Language:** SystemVerilog
-* **Simulation & Verification:** ModelSim / Verilator
-* **Logic Synthesis:** Yosys
-* **Physical Design (RTL-to-GDSII):** OpenLane
-* **Target Technology:** SkyWater 130nm PDK
-
----
 
 <div align="center">
   <i>If you find this project helpful, please consider giving it a ⭐️!</i>
