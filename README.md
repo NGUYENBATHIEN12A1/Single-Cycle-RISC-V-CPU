@@ -47,12 +47,3 @@ The Control Unit is designed to decode and execute the base 32-bit instruction f
 
 ---
 
-## 🚀 Getting Started
-
-### Prerequisites
-Make sure you have the necessary simulation tools installed (e.g., ModelSim).
-
-### Running Simulations
-1. Clone this repository:
-   ```bash
-   git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
