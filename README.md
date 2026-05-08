@@ -17,7 +17,7 @@ This project implements a single-cycle processor architecture based on the **RIS
 ### ✨ Key Features
 * **Architecture:** 32-bit Single-Cycle Datapath.
 * **ISA Support:** Standard RV32I Base Integer Instruction Set.
-* **Modularity:** Cleanly separated functional units (ALU, Register File, Control Unit, etc.).
+* **Modularity:** Cleanly separated functional units (ALU, Register File, Control Unit, ImmGen, etc.).
 * **ASIC Ready:** Synthesizable SystemVerilog code, targeting the open-source SkyWater 130nm PDK.
 
 ---
@@ -44,9 +44,9 @@ The decoding logic is designed to execute the base 32-bit instruction formats ri
 
 ---
 
-## 🧠 Control Logic Implementation
+## 🧠 Control & Decoding Logic Implementation
 
-The processor relies on a robust, two-tier control logic system to decode opcodes and orchestrate the ALU operations.
+The processor relies on a robust control logic system to decode opcodes, orchestrate ALU operations, and extract immediate values efficiently.
 
 ### 1. Main Control Unit
 Acts as the central brain of the processor. It parses the 7-bit `opcode` from the fetched instruction to assert the correct multiplexer selection signals and memory access flags (`MemRead`, `MemWrite`, `RegWrite`, etc.).
@@ -62,6 +62,14 @@ Works in tandem with the Main Control Unit. It takes the broad `ALUOp` signal an
 <div align="center">
   <img width="800" alt="ALU Control Implementation" src="https://github.com/user-attachments/assets/761b4f21-86e5-41d7-9a42-bd0320025a33" />
   <p><i>Figure 4: ALU Control RTL Logic</i></p>
+</div>
+
+### 3. Immediate Generator (ImmGen)
+Responsible for extracting and formatting immediate values from the 32-bit instruction. Depending on the instruction format (I, S, B, U, J), it slices the relevant bits, rearranges them, and performs sign-extension to generate a proper 32-bit operand for the ALU or branch target calculations.
+
+<div align="center">
+  <img width="800" alt="ImmGen Implementation" src="https://github.com/user-attachments/assets/fcb81c3e-b014-49fe-8828-6bfa12cbac6c" />
+  <p><i>Figure 5: Immediate Generator (ImmGen) Logic</i></p>
 </div>
 
 ---
