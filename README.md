@@ -47,3 +47,6 @@ The Control Unit is designed to decode and execute the base 32-bit instruction f
 
 ---
 
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/1ab7f60c-0b78-4ecf-b385-a590567066d4" />
+
+
